@@ -1,7 +1,7 @@
 {
-  "name": "lunaar.org",
+  "name": "gamespaces",
   "version": "7.6.0",
-  "description": "The Future of Unblocked Gaming!",
+  "description": "GameSpaces - Deine Spieleplattform",
   "type": "module",
   "main": "index.js",
   "scripts": {

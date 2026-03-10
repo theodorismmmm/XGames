@@ -1,21 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   if (!window.ConsoleLogged) {
     console.log(
-      `%\u004C\u0075\u006E\u0061\u0061\u0072%c v7 - main.js Loaded`,
+      `%cGameSpaces%c - main.js Loaded`,
       "font-size: 16px; background-color: #9282fb; border-top-left-radius: 5px; border-bottom-left-radius: 5px; padding: 4px; font-weight: bold;",
       "font-size: 16px; background-color: #090810; font-weight: bold; padding: 4px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;",
-    );
-
-    const ascii = `
- _._     _,-'""\`-._
-(,-.\`._,'(       |\\\`-/|
-        \`-.-' \\ )-\`( , o o)
-                    \`-    \\_\`"'- 
-        `;
-
-    console.log(
-      `%c${ascii}\ndiscord.gg/En5YJYWj3Z`,
-      "font-size: 24px; display: block; white-space: pre; text-align: center;",
     );
 
     window.ConsoleLogged = true;
@@ -141,76 +129,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (footer) {
         footer.insertAdjacentHTML(
           "beforeend",
-          `<a class="link footer-version" href="https://github.com/&#x70;&#x61;&#x72;&#x63;&#x6f;&#x69;&#x6c;/&#x6c;&#x75;&#x6e;&#x61;&#x61;&#x72;.org"> v${ver.version}</a>`,
+          `<a class="link footer-version" href="https://github.com/theodorismmmm/XGames"> v${ver.version}</a>`,
         );
       }
     });
 
-  if (
-    window.localStorage.getItem("disableTips") !== "true" &&
-    window.localStorage.getItem("v7toast") === "true"
-  ) {
-    const randomMessages = [
-      "Did you know? \u004C\u0075\u006E\u0061\u0061\u0072 V7 is awesome!",
-      "Luna AI is Amazing. you should try it out!",
-      "350+ games and counting!",
-      "350+ games and counting!",
-      "SCRAMJET WHAT",
-      "Have you tried the new proxy backend scramjet?",
-      "Did you know? You can set a panic button in settings",
-      "Did you know? You can change themes in settings",
-      "Did you know? You can Disable Particles and Blobs in settings",
-      "Did you know? You can Export and Import your save data in settings",
-      "Did you know? You can Export and Import your save data in settings",
-      'Proxy giving you issues? try changing the "Transport" in settings',
-      "https://discord.gg/En5YJYWj3Z",
-      "https://discord.gg/En5YJYWj3Z",
-      "Have a Windows PC? Check out Sparkle! at getsparkle.net",
-      "Join our discord for support and updates! discord.gg/En5YJYWj3Z",
-      "Welcome Back to \u004C\u0075\u006E\u0061\u0061\u0072!",
-      "Welcome Back to \u004C\u0075\u006E\u0061\u0061\u0072!",
-      "Tip: You can disable tips in settings (but dont be mean keep them on :3)",
-    ];
-
-    const message =
-      randomMessages[Math.floor(Math.random() * randomMessages.length)];
-    const urlMatch = message.match(/(https?:\/\/[^\s]+|discord\.gg\/[^\s]+)/);
-    const destination = urlMatch
-      ? urlMatch[0].startsWith("http")
-        ? urlMatch[0]
-        : "https://" + urlMatch[0]
-      : null;
-
-    Toastify({
-      text: message,
-      duration: 3000,
-      gravity: "bottom",
-      destination: destination || undefined,
-      position: "right",
-      style: {
-        background: "var(--primary-color)",
-        borderRadius: "var(--border-radius)",
-        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
-      },
-    }).showToast();
-  }
-  if (localStorage.getItem("v7toast") !== "true") {
-    Toastify({
-      text: `Welcome To \u004C\u0075\u006E\u0061\u0061\u0072 V7`,
-      duration: 5000,
-      gravity: "bottom",
-      position: "right",
-      style: {
-        background: "var(--accent-color)",
-        // boxShadow: "0 3px 6px -1px var(--primary-color),0 10px 36px -4px var(--accent-color)",
-        borderRadius: "var(--border-radius)",
-        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
-      },
-    }).showToast();
-
-    localStorage.setItem("v7toast", true);
-  }
-  // const transport = localStorage.getItem("proxyTransport");
+  // Benachrichtigungen deaktiviert
 
   // if (!transport) {
   //   localStorage.setItem("proxyTransport", "libcurl");
@@ -262,43 +186,13 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = panicUrl;
     });
   }
-
-  // Announcements modal
-  const currentAnnouncement = `
-<div>
-<h2>(BIG UPDATE) Whats New:</h2>
-  <ul style="list-style-position: inside; text-align: center;">
-    <li>ADDED 613 GXMES!</li>
-    <li>Added More page</li>
-    <li>Reverted Scramjet as default</li>
-    <li>Added Animation to gxmes/apps page</li>
-    <li>Performance Improvements</li>
-    <li>Updated AI Page</li>
-    <li>Added More AI Models</li>
-    <li>Added blob cloak</li>
-  </ul>
-  <a>Join the Discord: &#x68;&#x74;&#x74;&#x70;&#x73;&#x3a;&#x2f;&#x2f;&#x64;&#x73;&#x63;&#x2e;&#x67;&#x67;&#x2f;&#x70;&#x61;&#x72;&#x63;&#x6f;&#x69;&#x6c;</a>
-</div>`;
-  const lastAnnouncement = localStorage.getItem("lastAnnouncement");
-
-  if (lastAnnouncement !== currentAnnouncement) {
-    Swal.fire({
-      title: "Announcement",
-      html: currentAnnouncement,
-      confirmButtonText: "Alr thats cool",
-      allowOutsideClick: false,
-      allowEscapeKey: false,
-    }).then(() => {
-      localStorage.setItem("lastAnnouncement", currentAnnouncement);
-    });
-  }
 });
 
 const cloaks = [
   {
     name: "default",
     icon: "./media/logo.svg",
-    title: "&#x4C;&#x75;&#x6E;&#x61;&#x61;&#x72;",
+    title: "GameSpaces",
   },
   {
     name: "drive",
@@ -363,6 +257,6 @@ const cloaks = [
 ];
 
 if (!localStorage.getItem("hasSetCloak")) {
-  cloak.setCloak("Google Classroom", "/./media/cloaks/Classroom.png");
+  cloak.setCloak("GameSpaces", "./media/logo.svg");
   localStorage.setItem("hasSetCloak", "true");
 }
