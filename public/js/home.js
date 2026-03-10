@@ -1,5 +1,5 @@
 console.log(
-  `%\u004C\u0075\u006E\u0061\u0061\u0072%c v7 - home.js Loaded`,
+  `%cGameSpaces%c - home.js Loaded`,
   "font-size: 16px; background-color: #9282fb; border-top-left-radius: 5px; border-bottom-left-radius: 5px; padding: 4px; font-weight: bold;",
   "font-size: 16px; background-color: #090810; font-weight: bold; padding: 4px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;"
 );
@@ -19,29 +19,15 @@ function openApp(url) {
 
 const rngText = document.getElementById("rng-text");
 const greetings = [
-  "Soixante Sept",
-  "Bayerische Motoren Werke ist schlecht",
-  "Hello!",
-  "v7 is here!",
-  "Freedom",
-  "The Best",
-  "Welcome to the best",
-  "Welcome",
+  "Hallo!",
+  "Willkommen!",
+  "GameSpaces",
+  "Viel Spaß beim Spielen!",
+  "Frohe Weihnachten",
   "こんにちは",
-  "こんにちは",
-  "こんにちは",
-  "\u004C\u0075\u006E\u0061\u0061\u0072",
-  "uhh",
-  "Merry Christmas",
-  "Merry Christmas",
-  "Merry Christmas",
-  "Merry Christmas",
-  "Merry Christmas",
-  "Merry Christmas",
-  "Merry Christmas",
-  "Merry Christmas",
-  "Merry Christmas",
-  "Merry Christmas",
+  "Guten Tag!",
+  "Bereit zum Spielen?",
+  "Was spielen wir heute?",
 ];
 function getRandomGreeting() {
   const randomIndex = Math.floor(Math.random() * greetings.length);
